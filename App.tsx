@@ -328,7 +328,7 @@ const App: React.FC = () => {
 
   const renderDocumentation = () => (
     <div className="prose prose-invert max-w-none p-6 bg-devops-800 rounded-xl border border-devops-700">
-      <h1>DevOps Ecosystem Simulation</h1>
+      <h1>Full-Devops-Automation</h1>
       <p>
         Modern software systems demand rapid development, continuous delivery, and high reliability.
         This project simulates a complete end-to-end DevOps ecosystem using Git, Maven, Docker, and Kubernetes.
