@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  devops-simops:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Pass the API key from the host environment to the build process
+        VITE_GEMINI_API_KEY: ${VITE_GEMINI_API_KEY}
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    container_name: devops-simops-container
