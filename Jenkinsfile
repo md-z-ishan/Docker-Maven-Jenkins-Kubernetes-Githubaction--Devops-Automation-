@@ -36,9 +36,10 @@ pipeline {
         stage('Deploy Container') {
             steps {
                 echo 'Deploying Application using Docker Compose...'
-                // Restart the container with the newly built image
-                sh 'docker-compose down'
-                sh 'docker-compose up -d'
+                // Clean up any existing containers that might cause conflicts
+                sh 'docker rm -f devops-simops-container || true'
+                sh 'docker-compose down || true'
+                sh 'docker-compose up -d --build'
             }
         }
     }
