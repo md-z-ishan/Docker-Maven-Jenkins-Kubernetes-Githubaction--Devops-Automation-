@@ -4,6 +4,8 @@ pipeline {
     environment {
         // Defines the Docker image name
         IMAGE_NAME = 'devops-simops-ecosystem'
+        // Include Homebrew and local binaries in PATH so Jenkins can find mvn and docker
+        PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}"
         // API key will be passed as a secret or environment variable in Jenkins
         // VITE_GEMINI_API_KEY = credentials('gemini-api-key')
     }
